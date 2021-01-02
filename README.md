@@ -10,6 +10,16 @@ A simple app to hit the NY Times Most Popular Articles.
 
 
 
+
+
+<b>Details View Screen</b>
+<img src="screenshoots/02.jpg" alt="Details Screen"/>
+
+
+
+
+
+
 <b>Details View Screen</b>
 <img src="screenshoots/2.jpg" alt="Details Screen"/>
 

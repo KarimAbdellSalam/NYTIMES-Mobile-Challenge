@@ -2,6 +2,16 @@
 
 A simple app to hit the NY Times Most Popular Articles.
 
+## Screens
+
+<b>Main article list Screen</b>
+<img src="screenshoots/1.jpg" alt="Articles Screen"/>
+
+<b>Details View Screen</b>
+<img src="screenshoots/2.jpg" alt="Details Screen"/>
+
+<b>Details View Screen</b>
+<img src="screenshoots/3.jpg" alt="Details Screen"/>
 
 #### The app has following packages:
 1. **adapters** It Contains Binding Adapters
@@ -35,13 +45,4 @@ flickrApiKeyDev="<add your api key>"
 * Build your project
 * Run app or the test files
 &nbsp;
-## Screens
 
-<b>Main article list Screen</b>
-<img src="screenshoots/1.jpg" alt="Articles Screen"/>
-
-<b>Details View Screen</b>
-<img src="screenshoots/2.jpg" alt="Details Screen"/>
-
-<b>Details View Screen</b>
-<img src="screenshoots/3.jpg" alt="Details Screen"/>

@@ -9,8 +9,8 @@ A simple app to hit the NY Times Most Popular Articles.
 
 
 &nbsp;
-
-
+&nbsp;
+&nbsp;
 
 
 <b>Main article list Screen</b>
@@ -19,20 +19,21 @@ A simple app to hit the NY Times Most Popular Articles.
 
 
 &nbsp;
-
-
+&nbsp;
+&nbsp;
 
 <b>Details View Screen</b>
 <img src="screenshoots/2.jpg" alt="Details Screen"/>
 
 
 &nbsp;
-
+&nbsp;
+&nbsp;
 
 <b>Details View Screen</b>
 <img src="screenshoots/3.jpg" alt="Details Screen"/>
 &nbsp;
-
+&nbsp;
 #### The app has following packages:
 1. **adapters** It Contains Binding Adapters
 2. **callbacks** It Contains callback interfaces
@@ -48,6 +49,8 @@ A simple app to hit the NY Times Most Popular Articles.
 
 * #### Add the below lines to local.properties file in order to run the project correctly.
 #in our case the base url and api key for both development and live versions are the same.
+<img src="screenshoots/6.PNG" alt="local.properties"/>
+&nbsp;
 
 * replace <add your api key> with your own api key.
 You'll be using the most viewed section of this API. Note: you need to sign up for an API key at:

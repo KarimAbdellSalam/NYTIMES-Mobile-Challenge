@@ -8,15 +8,17 @@ A simple app to hit the NY Times Most Popular Articles.
 <img src="screenshoots/1.jpg" alt="Articles Screen"/>
 
 
+&nbsp;
 
 
 
 
-<b>Details View Screen</b>
+<b>Main article list Screen</b>
 <img src="screenshoots/02.jpg" alt="Details Screen"/>
 
 
 
+&nbsp;
 
 
 
@@ -24,10 +26,12 @@ A simple app to hit the NY Times Most Popular Articles.
 <img src="screenshoots/2.jpg" alt="Details Screen"/>
 
 
+&nbsp;
 
 
 <b>Details View Screen</b>
 <img src="screenshoots/3.jpg" alt="Details Screen"/>
+&nbsp;
 
 #### The app has following packages:
 1. **adapters** It Contains Binding Adapters

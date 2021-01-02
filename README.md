@@ -64,7 +64,7 @@ flickrApiKey="<add your api key>"
 #Debug Values:
 flickrBaseURLDev="http://api.nytimes.com/"
 flickrApiKeyDev="<add your api key>"
-&nbsp;
+```
 * Build your project
 * Run app or the test files
 

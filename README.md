@@ -7,8 +7,14 @@ A simple app to hit the NY Times Most Popular Articles.
 <b>Main article list Screen</b>
 <img src="screenshoots/1.jpg" alt="Articles Screen"/>
 
+
+
+
 <b>Details View Screen</b>
 <img src="screenshoots/2.jpg" alt="Details Screen"/>
+
+
+
 
 <b>Details View Screen</b>
 <img src="screenshoots/3.jpg" alt="Details Screen"/>

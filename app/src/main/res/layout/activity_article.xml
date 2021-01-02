@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="dev.ny.challenge.ui.article.ArticleActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="dev.ny.challenge.ui.article.ArticleViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+
+        <include
+            layout="@layout/app_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="32dp">
+
+                    <TextView
+                        android:id="@+id/articleTitleTv"
+                        fontPath="fonts/cheltenham_normal.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@{viewModel.article.title}"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0"
+                        tools:text="Trump’s Focus as the Pandemic Raged: What Would It Mean for Him?" />
+
+                    <TextView
+                        android:id="@+id/articleAbstractTv"
+                        fontPath="fonts/cheltenham_normal.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{viewModel.article.abstract}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/text"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/articleTitleTv"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/articleTitleTv"
+                        app:layout_constraintTop_toBottomOf="@+id/articleTitleTv"
+                        app:layout_constraintVertical_bias="0"
+                        tools:text="A more contagious version of the coronavirus may alter the course of the pandemic in the United States, researchers said." />
+
+
+                    <ImageView
+                        android:id="@+id/articleIm"
+                        imageUrl="@{viewModel.article.headerImage}"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/light_gray"
+                        android:transitionName="article_image"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="3:2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/articleAbstractTv"
+                        app:layout_constraintVertical_bias="0"
+                        tools:src="@drawable/dummy" />
+
+                    <TextView
+                        android:id="@+id/copyrightsTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@{!viewModel.article.media.isEmpty()?viewModel.article.media.get(0).copyright:``}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/articleIm"
+                        app:layout_constraintVertical_bias="0"
+                        tools:text="Doug Mills/The New York Times" />
+
+                    <TextView
+                        android:id="@+id/bylineTv"
+                        fontPath="fonts/cheltenham_normal.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="@{viewModel.article.byline}"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/articleTitleTv"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/articleTitleTv"
+                        app:layout_constraintTop_toBottomOf="@+id/copyrightsTv"
+                        app:layout_constraintVertical_bias="0"
+                        tools:text="Michael D.Shear Michael D.Shear Michael D.Shear Michael D.Shear" />
+
+                    <TextView
+                        android:id="@+id/publishedDateTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="32dp"
+                        android:text="@{@string/published+` `+viewModel.article.publishedDate}"
+                        android:textColor="@color/text"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bylineTv"
+                        app:layout_constraintVertical_bias="0"
+                        tools:text="Published Dec. 31, 2020" />
+
+                    <TextView
+                        android:id="@+id/updatedDateTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@{@string/updated+` `+viewModel.article.updated}"
+                        android:textColor="@color/text"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/publishedDateTv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/publishedDateTv"
+                        app:layout_constraintTop_toTopOf="@+id/publishedDateTv"
+                        tools:text="Updated Dec. 31, 2020" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

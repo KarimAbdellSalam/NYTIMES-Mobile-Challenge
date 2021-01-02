@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="dev.ny.challenge.ui.main.ArticleItemViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@color/white"
+        android:elevation="5dp"
+        android:foreground="@drawable/ripple"
+        android:onClick="@{()->viewModel.onItemClick()}"
+        android:paddingBottom="32dp">
+
+        <ImageView
+            android:id="@+id/articleIm"
+            imageUrl="@{viewModel.article.image}"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintDimensionRatio="1:1"
+            android:background="@color/light_gray"
+            android:transitionName="article_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:src="@drawable/dummy" />
+
+
+        <TextView
+            android:id="@+id/articleTitleTv"
+            fontPath="fonts/cheltenham_normal.ttf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.article.title}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/articleIm"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:text="Trump’s Focus as the Pandemic Raged: What Would It Mean for Him?" />
+
+        <TextView
+            android:id="@+id/articleAbstractTv"
+            fontPath="fonts/cheltenham_normal.ttf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{viewModel.article.abstract}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/articleTitleTv"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/articleTitleTv"
+            app:layout_constraintTop_toBottomOf="@+id/articleTitleTv"
+            app:layout_constraintVertical_bias="0"
+            tools:text="A more contagious version of the coronavirus may alter the course of the pandemic in the United States, researchers said." />
+
+        <TextView
+            android:id="@+id/articleUpdateDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@{viewModel.article.updated}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/articleAbstractTv"
+            app:layout_constraintTop_toBottomOf="@+id/articleAbstractTv"
+            app:layout_constraintVertical_bias="0"
+            tools:text="2020-12-31 09:21:45" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

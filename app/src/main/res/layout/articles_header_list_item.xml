@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="dev.ny.challenge.ui.main.ArticleItemViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@color/white"
+        android:elevation="5dp"
+        android:foreground="@drawable/ripple"
+        android:onClick="@{()->viewModel.onItemClick()}"
+        android:paddingBottom="32dp">
+
+        <ImageView
+            android:id="@+id/articleIm"
+            imageUrl="@{viewModel.article.headerImage}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/light_gray"
+            android:scaleType="fitCenter"
+            android:transitionName="article_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="3:2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:src="@drawable/dummy" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{!viewModel.article.media.isEmpty()?viewModel.article.media.get(0).copyright:``}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/articleIm"
+            app:layout_constraintVertical_bias="0"
+            tools:text="Doug Mills/The New York Times" />
+
+        <TextView
+            android:id="@+id/articleTitleTv"
+            fontPath="fonts/cheltenham_normal.ttf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.article.title}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text_2"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/articleIm"
+            app:layout_constraintVertical_bias="0"
+            tools:text="Trump’s Focus as the Pandemic Raged: What Would It Mean for Him?" />
+
+        <TextView
+            android:id="@+id/articleAbstractTv"
+            fontPath="fonts/cheltenham_normal.ttf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.article.abstract}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/articleTitleTv"
+            app:layout_constraintVertical_bias="0"
+            tools:text="President Trump missed his chance to show that he could rise to the moment in the final chapter of his presidency and meet the defining challenge of his tenure." />
+
+
+        <TextView
+            android:id="@+id/articleUpdateDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@{viewModel.article.updated}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/articleAbstractTv"
+            app:layout_constraintTop_toBottomOf="@+id/articleAbstractTv"
+            app:layout_constraintVertical_bias="0"
+            tools:text="2020-12-31 09:21:45" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

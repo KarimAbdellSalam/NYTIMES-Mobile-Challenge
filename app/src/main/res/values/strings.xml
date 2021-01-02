@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NYT Challenge</string>
+    <string name="no_articles">No Articles</string>
+    <string name="published">Published</string>
+    <string name="updated">Updated</string>
+
+</resources>
